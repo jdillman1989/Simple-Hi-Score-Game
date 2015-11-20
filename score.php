@@ -9,7 +9,7 @@ $update = substr($current, 0, -1);
 
 $update .= $player;
 
-$update .= "]";
+$update .= ",]";
 
 file_put_contents($file, $update);
 

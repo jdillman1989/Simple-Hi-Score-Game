@@ -180,9 +180,11 @@ $(document).ready( function(){
 
 			if (currentHealth <= 0) {
 
-				currentHealth = 1;
+				currentHealth += 1;
 
 				death();
+
+				currentHealth += 1;
 			};
 		}
 

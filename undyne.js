@@ -180,30 +180,28 @@ $(document).ready( function(){
 
 			if (currentHealth <= 0) {
 
-				currentHealth += 1;
+				currentHealth = 1;
+
+				window.clearInterval(bulletTimer);
+
+				container.children().each( function() {
+
+					var thisID = $(this).attr("id");
+					
+					if ( thisID == "character" ||  thisID == "shield" ||  thisID == "message") {
+
+					}
+					else{
+
+						$(this).remove();
+					};
+				});
 
 				death();
-
-				currentHealth += 1;
 			};
 		}
 
 		function death(){
-
-			window.clearInterval(bulletTimer);
-
-			container.children().each( function() {
-
-				var thisID = $(this).attr("id");
-				
-				if ( thisID == "character" ||  thisID == "shield" ||  thisID == "message") {
-
-				}
-				else{
-
-					$(this).remove();
-				};
-			});
 
 			var tag = prompt("GAME OVER\nYou reached level " + currentLevel + "\nYour final score was: " + currentScore + "\nEnter your initials:", "");
 

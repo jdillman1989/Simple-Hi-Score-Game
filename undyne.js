@@ -197,7 +197,7 @@ $(document).ready( function(){
 					};
 				});
 
-				death();
+				setTimeout(death, 500);
 			};
 		}
 

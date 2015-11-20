@@ -203,7 +203,7 @@ $(document).ready( function(){
 
 					$(this).remove();
 				};
-			})
+			});
 
 			var tag = prompt("GAME OVER\nYou reached level " + currentLevel + "\nYour final score was: " + currentScore + "\nEnter your initials:", "");
 

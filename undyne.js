@@ -179,8 +179,7 @@ $(document).ready( function(){
 
 			if (currentHealth <= 0) {
 
-				death();
-				currentHealth = 1;
+				setTimeout(death, 1000);
 			};
 		}
 
@@ -204,7 +203,7 @@ $(document).ready( function(){
 					url: 'http://drupal.jdillman.com/score.php',
 					data: { data: JSON.stringify(playerInfo) },
 					success: function () { location.reload(); },
-					failure: function() { $(body).append("Could not save score"); }
+					failure: function() { $(body).append("Could not save score"); currentHealth = 60; }
 				});
 		}
 	}

@@ -186,6 +186,8 @@ $(document).ready( function(){
 
 		function death(){
 
+			currentHealth = 1;
+
 			window.clearInterval(bulletTimer);
 
 			container.children().each( function() {

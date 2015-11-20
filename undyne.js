@@ -190,14 +190,14 @@ $(document).ready( function(){
 
 			container.children().each( function() {
 
-				var thisID = this.attr("id");
+				var thisID = $(this).attr("id");
 				
 				if ( thisID == "character" ||  thisID == "shield" ||  thisID == "message") {
 
 				}
 				else{
-					
-					this.remove();
+
+					$(this).remove();
 				};
 			})
 

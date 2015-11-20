@@ -180,13 +180,13 @@ $(document).ready( function(){
 
 			if (currentHealth <= 0) {
 
+				currentHealth = 1;
+
 				death();
 			};
 		}
 
 		function death(){
-
-			currentHealth = 1;
 
 			window.clearInterval(bulletTimer);
 

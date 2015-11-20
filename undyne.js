@@ -31,7 +31,7 @@ $(document).ready( function(){
 			output+="<td>" + data[i].player + "</td><td>" + data[i].level + "</td><td>" + data[i].score + "</td>";
 			output+="</tr>";
 		}
-		scoreTable.append=output;
+		scoreTable.append(output);
 	});
 	
 	$(document).keydown(function( event ) {
@@ -187,6 +187,19 @@ $(document).ready( function(){
 		function death(){
 
 			window.clearInterval(bulletTimer);
+
+			container.children().each( function() {
+
+				var thisID = this.attr("id");
+				
+				if ( thisID == "character" ||  thisID == "shield" ||  thisID == "message") {
+
+				}
+				else{
+					
+					this.remove();
+				};
+			})
 
 			var tag = prompt("GAME OVER\nYou reached level " + currentLevel + "\nYour final score was: " + currentScore + "\nEnter your initials:", "");
 

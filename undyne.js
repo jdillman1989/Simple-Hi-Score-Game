@@ -200,7 +200,7 @@ $(document).ready( function(){
 					type: "GET",
 					dataType : 'json',
 					async: false,
-					url: 'http://drupal.jdillman.com/score.php',
+					url: 'http://drupal.jdillman.com/game/score.php',
 					data: { data: JSON.stringify(playerInfo) },
 					success: function () { location.reload(); },
 					failure: function() { $(body).append("Could not save score"); currentHealth = 60; }

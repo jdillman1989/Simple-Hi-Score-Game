@@ -20,6 +20,7 @@ $(document).ready( function(){
 
 	var blocking = "up";
 	var score = 0;
+	var dead = false;
 	
 	message.hide();
 
@@ -179,13 +180,13 @@ $(document).ready( function(){
 
 			if (currentHealth <= 0) {
 
-				setTimeout(death, 1000);
+				death();
 			};
 		}
 
 		function death(){
 
-			console.log("called death();");
+			window.clearInterval(bulletTimer);
 
 			var tag = prompt("GAME OVER\nYou reached level " + currentLevel + "\nYour final score was: " + currentScore + "\nEnter your initials:", "");
 
@@ -203,7 +204,7 @@ $(document).ready( function(){
 					url: 'http://drupal.jdillman.com/game/score.php',
 					data: { data: JSON.stringify(playerInfo) },
 					success: function () { location.reload(); },
-					failure: function() { $(body).append("Could not save score"); currentHealth = 60; }
+					failure: function() { $(body).append("Could not save score"); }
 				});
 		}
 	}
